@@ -1,6 +1,8 @@
 package com.vagif;
 
+import com.vagif.Dao.CustomerRepository;
 import com.vagif.Dao.StudentRepository;
+import com.vagif.entity.Customer;
 import com.vagif.entity.Student;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -18,6 +20,8 @@ public class ApplicationTest {
 
     @Autowired
     private StudentRepository studentRepository;
+    @Autowired
+    private CustomerRepository customerRepository;
 
     @Test
    public void testCreateStudent() {
@@ -54,6 +58,25 @@ public class ApplicationTest {
         Student student = new Student();
         student.setId(1L);
         studentRepository.deleteById(1L);
+    }
+
+
+
+    @Test
+    public void testCreateCustomer() {
+        Customer customer = new Customer();
+        customer.setId(1L);
+        customer.setName("Vagif");
+        customer.setMail("quliyev_vaqif@icloud.com");
+
+        customerRepository.save(new Customer());
+
+    }
+
+    @Test
+    public void testFindCustomerById() {
+        Optional<Customer> customer = customerRepository.findById(1L);
+        System.out.println(customer);
     }
 
 

@@ -3,13 +3,15 @@ package com.vagif.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "customertab")
+@Table(name = "customerstab")
 public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "cname")
     private String name;
+    @Column(name = "cmail")
     private String mail;
 
     public Long getId() {
