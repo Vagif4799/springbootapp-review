@@ -1,4 +1,4 @@
-package Dao;
+package com.vagif.Dao;
 
 import com.vagif.entity.Student;
 import org.springframework.data.repository.CrudRepository;
