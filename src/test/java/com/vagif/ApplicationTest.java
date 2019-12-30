@@ -49,6 +49,12 @@ public class ApplicationTest {
     }
 
 
+    @Test
+    public void testDeleteStudent() {
+        Student student = new Student();
+        student.setId(1L);
+        studentRepository.deleteById(1L);
+    }
 
 
 }
