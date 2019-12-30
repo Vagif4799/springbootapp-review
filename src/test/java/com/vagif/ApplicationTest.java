@@ -79,5 +79,11 @@ public class ApplicationTest {
         System.out.println(customer);
     }
 
+    @Test
+    public void testUpdateCustomer() {
+        Customer customer = customerRepository.findById(1L).get();
+        customer.setId(2L);
+        customerRepository.save(customer);
+    }
 
 }
