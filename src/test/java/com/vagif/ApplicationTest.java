@@ -39,4 +39,16 @@ public class ApplicationTest {
     }
 
 
+    @Test
+    public void testUpdateStudent() {
+        Student student = studentRepository.findById(1L).get();
+        student.setFee(40d);
+
+        studentRepository.save(student);
+
+    }
+
+
+
+
 }
